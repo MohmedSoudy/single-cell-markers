@@ -47,7 +47,7 @@ target_cell_type <- "CD8+ T cell"
 
 # Extract unique markers for target cell type
 cell_markers_mt <- unique(cell_markers_blood$marker[cell_markers_blood$cell_name == target_cell_type])
-
+source("https://raw.githubusercontent.com/MohmedSoudy/single-cell-markers/refs/heads/main/get_relevant_markers.R")
 # Get relevant markers (function not shown in original script)
 relevant_markers <- get_relevant_markers(ifnb, "RNA", cell_markers_mt, target_cell_type)
 
@@ -58,7 +58,7 @@ p <- DotPlot(ifnb, relevant_markers) + scale_size(range = c(1,8))
 ggsave(filename = "CD8 T cell.jpeg", plot = p, width = 8, height = 5, dpi = 300)
 ```
 
-![](https://raw.githubusercontent.com/MohmedSoudy/single-cell-markers/blob/main/CD8%20T%20cell.jpeg)
+![](https://raw.githubusercontent.com/MohmedSoudy/single-cell-markers/refs/heads/main/CD8%20T%20cell.jpeg)
 
 
 ## References
